@@ -263,29 +263,25 @@
         </div>
     </div>
 
-    <!-- Modal de Formulario de Envío por Email con Formspree -->
+    <!-- Modal de Formulario de Envío por WhatsApp -->
     <div id="checkout-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeCheckoutModal()">&times;</span>
             <h2>Finalizar Pedido</h2>
-            <p>Ingresa tus datos para enviarte el detalle del pedido directamente a nuestro correo electrónico.</p>
+            <p>Ingresa tus datos para enviar tu pedido directamente a nuestro WhatsApp.</p>
             
-            <form id="checkout-form" action="https://formspree.io/f/xeaewlgp" method="POST">
-                <input type="hidden" name="Detalle_del_Pedido" id="order-details-input">
-                
+            <form id="checkout-form" onsubmit="sendWhatsAppOrder(event)">
                 <div class="form-group">
                     <label for="client-name">Nombre Completo:</label>
-                    <input type="text" id="client-name" name="Nombre_Cliente" required placeholder="Ej: Juan Pérez">
+                    <input type="text" id="client-name" required placeholder="Ej: Juan Pérez">
                 </div>
                 <div class="form-group">
-                    <label for="client-phone">Teléfono / WhatsApp:</label>
-                    <input type="tel" id="client-phone" name="Telefono_WhatsApp" required placeholder="Ej: 2646166402">
+                    <label for="client-notes">Dirección o notas adicionales (Opcional):</label>
+                    <input type="text" id="client-notes" placeholder="Ej: Envío a domicilio / Retiro por local">
                 </div>
-                <div class="form-group">
-                    <label for="client-email">Tu Email de contacto:</label>
-                    <input type="email" id="client-email" name="Email_Cliente" required placeholder="tuemail@ejemplo.com">
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Enviar Pedido por Email</button>
+                <button type="submit" class="btn btn-primary btn-block social-btn whatsapp" style="border:none; width: 100%; justify-content: center; font-size: 1rem;">
+                    <i class="fa-brands fa-whatsapp"></i> Enviar Pedido por WhatsApp
+                </button>
             </form>
         </div>
     </div>
@@ -316,6 +312,7 @@
     <!-- Script Interactividad Carrito y Modales -->
     <script>
         let cart = [];
+        const whatsappNumber = "542646166402";
 
         function openModal(title, price, img, description) {
             document.getElementById('modal-title').innerText = title;
@@ -409,18 +406,6 @@
                 alert('El carrito está vacío. Agrega productos antes de finalizar el pedido.');
                 return;
             }
-            
-            let orderSummary = "Resumen del Pedido:\n";
-            let total = 0;
-            cart.forEach(item => {
-                const subtotal = item.price * item.quantity;
-                total += subtotal;
-                orderSummary += `- ${item.title} (x${item.quantity}) - $${subtotal.toLocaleString()}\n`;
-            });
-            orderSummary += `\nTOTAL A PAGAR: $${total.toLocaleString()}`;
-
-            document.getElementById('order-details-input').value = orderSummary;
-
             document.getElementById('checkout-modal').style.display = 'block';
             document.getElementById('cart-sidebar').classList.remove('active');
         }
@@ -435,6 +420,35 @@
             closeCheckoutModal();
             document.getElementById('cart-sidebar').classList.remove('active');
             document.getElementById('overlay').style.display = 'none';
+        }
+
+        function sendWhatsAppOrder(event) {
+            event.preventDefault();
+            
+            const clientName = document.getElementById('client-name').value.trim();
+            const clientNotes = document.getElementById('client-notes').value.trim();
+
+            let message = `*¡Hola Circuito Urbano! Quiero realizar el siguiente pedido:*\n\n`;
+            message += `👤 *Cliente:* ${clientName}\n`;
+            if (clientNotes) {
+                message += `📝 *Notas / Dirección:* ${clientNotes}\n`;
+            }
+            message += `\n📦 *Productos:*\n`;
+
+            let total = 0;
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                message += `• ${item.title} (x${item.quantity}) - $${subtotal.toLocaleString()}\n`;
+            });
+
+            message += `\n💰 *TOTAL A PAGAR:* $${total.toLocaleString()}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            window.open(whatsappUrl, '_blank');
+            closeCheckoutModal();
         }
     </script>
 </body>

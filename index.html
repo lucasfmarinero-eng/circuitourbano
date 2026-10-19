@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuito Urbano | Electrónica y Herramientas</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navegación -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-microchip"></i>
+            <span>Circuito<span class="highlight">Urbano</span></span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon-container" onclick="toggleCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="badge">Tecnología & Trabajo Pesado</span>
+            <h1>Potencia e Innovación en Cada Proyecto</h1>
+            <p>La mejor selección de componentes electrónicos y accesorios de alta precisión para profesionales y entusiastas.</p>
+            <div class="hero-buttons">
+                <a href="#productos" class="btn btn-primary">Ver Catálogo</a>
+                <a href="#contacto" class="btn btn-secondary">Contactar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destacados / Ventajas -->
+    <section class="features">
+        <div class="feature-card">
+            <i class="fa-solid fa-bolt feature-icon"></i>
+            <h3>Alta Eficiencia</h3>
+            <p>Componentes probados bajo los estándares más exigentes del mercado.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-screwdriver-wrench feature-icon"></i>
+            <h3>Herramientas Profesionales</h3>
+            <p>Equipamiento resistente diseñado para durar y facilitar tu trabajo.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-truck-fast feature-icon"></i>
+            <h3>Envíos Rápidos</h3>
+            <p>Recibe tus productos donde los necesites de forma rápida y segura.</p>
+        </div>
+    </section>
+
+    <!-- Productos Destacados -->
+    <section id="productos" class="products">
+        <h2 class="section-title">Catálogo de Productos</h2>
+        <p class="subtitle-text">Toca la imagen de un producto para ver la descripción completa y agregarlo al carrito.</p>
+        
+        <div class="product-grid">
+
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <div class="product-badge">Disponible</div>
+                <img src="1.webp" alt="Adaptador OTG a USB Tipo C" class="product-img" onclick="openModal('Adaptador OTG a USB Tipo C', 2500, '1.webp', 'Adaptador compacto OTG a USB Tipo C. Permite conectar pendrives, mouses, teclados y otros periféricos a tu smartphone o tablet con puerto Tipo C.')">
+                <h3>Adaptador OTG a USB Tipo C</h3>
+                <p class="price">$2.500</p>
+                <button class="btn-add-cart" onclick="addToCart('Adaptador OTG a USB Tipo C', 2500, '1.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <div class="product-badge">Disponible</div>
+                <img src="2.webp" alt="Adaptador Foco" class="product-img" onclick="openModal('Adaptador Foco', 3000, '2.webp', 'Adaptador portalámparas de alta resistencia. Ideal para instalaciones rápidas y adaptaciones de iluminación doméstica e industrial.')">
+                <h3>Adaptador Foco</h3>
+                <p class="price">$3.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Adaptador Foco', 3000, '2.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card">
+                <div class="product-badge">Disponible</div>
+                <img src="3.webp" alt="Cable SAMSUNG Tipo C a C" class="product-img" onclick="openModal('Cable SAMSUNG Tipo C a C', 5000, '3.webp', 'Cable de carga rápida y transferencia de datos Samsung Tipo C a Tipo C. Soporta carga rápida de alta potencia y máxima velocidad de datos.')">
+                <h3>Cable SAMSUNG Tipo C a C</h3>
+                <p class="price">$5.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Cable SAMSUNG Tipo C a C', 5000, '3.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card">
+                <div class="product-badge">Disponible</div>
+                <img src="4.webp" alt="Consola G5" class="product-img" onclick="openModal('Consola Retro G5', 24000, '4.webp', 'Consola portátil de videojuegos G5 con cientos de juegos retro preinstalados. Pantalla a color de alta definición y batería recargable.')">
+                <h3>Consola Retro G5</h3>
+                <p class="price">$24.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Consola Retro G5', 24000, '4.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="product-card out-of-stock">
+                <div class="product-badge sold-out">Agotado</div>
+                <img src="5.webp" alt="Power Bank 25000 mAh" class="product-img" onclick="openModal('Power Bank 25000 mAh', 0, '5.webp', 'Batería externa portátil Power Bank de 25.000 mAh. Múltiples salidas USB y carga ultra rápida. Actualmente fuera de stock.')">
+                <h3>Power Bank 25000 mAh</h3>
+                <p class="price">AGOTADO</p>
+                <button class="btn-add-cart" disabled>Sin Stock</button>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="product-card">
+                <div class="product-badge">Disponible</div>
+                <img src="6.webp" alt="Mouse GAMER" class="product-img" onclick="openModal('Mouse GAMER RGB', 10000, '6.webp', 'Mouse gamer ergonómico con iluminación LED RGB, botones programables y sensor óptico de alta precisión con DPI ajustable.')">
+                <h3>Mouse GAMER RGB</h3>
+                <p class="price">$10.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Mouse GAMER RGB', 10000, '6.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 7 -->
+            <div class="product-card">
+                <div class="product-badge">Disponible</div>
+                <img src="7.webp" alt="Cable MOTOROLA USB a Tipo C" class="product-img" onclick="openModal('Cable MOTOROLA USB a Tipo C', 4000, '7.webp', 'Cable de carga y datos original Motorola USB a Tipo C. Material reforzado para máxima durabilidad.')">
+                <h3>Cable MOTOROLA USB a Tipo C</h3>
+                <p class="price">$4.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Cable MOTOROLA USB a Tipo C', 4000, '7.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 8 -->
+            <div class="product-card">
+                <div class="product-badge">Disponible</div>
+                <img src="8.webp" alt="Cable MOTOROLA Tipo C a C" class="product-img" onclick="openModal('Cable MOTOROLA Tipo C a C', 5000, '8.webp', 'Cable TurboPower Motorola Tipo C a C. Diseñado para carga rápida eficiente sin sobrecalentamiento.')">
+                <h3>Cable MOTOROLA Tipo C a C</h3>
+                <p class="price">$5.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Cable MOTOROLA Tipo C a C', 5000, '8.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 9 -->
+            <div class="product-card">
+                <div class="product-badge">Disponible</div>
+                <img src="9.webp" alt="Cable SAMSUNG USB a Tipo C" class="product-img" onclick="openModal('Cable SAMSUNG USB a Tipo C', 4000, '9.webp', 'Cable de carga rápida Samsung USB a Tipo C. Compatible con una amplia variedad de dispositivos moviles.')">
+                <h3>Cable SAMSUNG USB a Tipo C</h3>
+                <p class="price">$4.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Cable SAMSUNG USB a Tipo C', 4000, '9.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- producto 10-->
+             <div class="product-card">
+                <div class="product-badge">Disponible</div>
+                <img src="10.webp" alt="Cabezal Samsung 45W Tipo C" class="product-img" onclick="openModal('Cable SAMSUNG USB a Tipo C', 10000, '10.webp', 'Cabezal cargador SAMSUNG 45w TURBO tipo c.')">
+                <h3>Cabezal SAMSUNG 45W tipo C</h3>
+                <p class="price">$10000</p>
+                <button class="btn-add-cart" onclick="addToCart('Cable SAMSUNG USB a Tipo C', 10000, '10.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+             </div>
+        
+            <!--producto 11-->
+        
+             <div class="product-card">
+                <div class="product-badge">Disponible</div>
+                <img src="11.webp" alt="Soporte Celular" class="product-img" onclick="openModal('Soporte Celular', 3500, '11.webp', 'Soporte celurar para auto.')">
+                <h3>Soporte Celular</h3>
+                <p class="price">$3500</p>
+                <button class="btn-add-cart" onclick="addToCart('Soporte Celular', 3500, '11.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+             </div>
+
+         <!--producto 12-->
+        
+             <div class="product-card">
+                <div class="product-badge">Disponible</div>
+                <img src="12.webp" alt="Power Bank 6000mlh" class="product-img" onclick="openModal('Power Bank 6000mlh', 15000, '12.webp', 'Power Bank 6000mlh.')">
+                <h3>Power Bank 6000mlh</h3>
+                <p class="price">$15000</p>
+                <button class="btn-add-cart" onclick="addToCart('Power Bank 6000mlh', 15000, '12.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+             </div>   
+
+      
+        </div>
+        <!--producto 17-->
+        
+             <div class="product-card">
+                <div class="product-badge">Disponible</div>
+                <img src="17.webp" alt="Sarten Krea" class="product-img" onclick="openModal('Sarten Krea', 18000, '17.webp', 'Sarten Krea.')">
+                <h3>Sarten Krea</h3>
+                <p class="price">$18000</p>
+                <button class="btn-add-cart" onclick="addToCart('Sarten Krea', 18000, '17.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+             </div>   
+          <!--producto 16-->
+        
+             <div class="product-card">
+                <div class="product-badge">Disponible</div>
+                <img src="16.webp" alt="Auriculares Ultra pods" class="product-img" onclick="openModal('Auriculares Ultra pods', 10000, '16.webp', 'Auriculares Ultra pods.')">
+                <h3>Auriculares Ultra pods</h3>
+                <p class="price">$10000</p>
+                <button class="btn-add-cart" onclick="addToCart('Cargador Auto', 10000, '16.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+             </div>   
+            <!--producto 15-->
+        
+             <div class="product-card out-of-stock">
+                <div class="product-badge sold-out">AGOTADO</div>
+                <img src="15.webp" alt="depiladora inalambrica" class="product-img" onclick="openModal('depiladora inalambrica', 0, '15.webp', 'depiladora inalambrica.')">
+                <h3>Cargador Auto</h3>
+                <p class="price">AGOTADO</p>
+                <button class="btn-add-cart" disabled>Sin Stock</button>
+             </div>   
+
+
+
+            <!--producto 13-->
+        
+             <div class="product-card">
+                <div class="product-badge">Disponible</div>
+                <img src="13.webp" alt="Cargador Auto" class="product-img" onclick="openModal('Cargador Auto', 7500, '13.webp', 'Cargador Auto.')">
+                <h3>Cargador Auto</h3>
+                <p class="price">$7500</p>
+                <button class="btn-add-cart" onclick="addToCart('Cargador Auto', 7500, '13.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+             </div>   
+
+
+            
+
+              <!--producto 14-->
+        
+             <div class="product-card out-of-stock">
+                <div class="product-badge sold-out">AGOTADO</div>
+                <img src="14.webp" alt="Tira led rgb" class="product-img" onclick="openModal('Tira led rgb', 7500, '14.webp', 'Tira led rgb.')">
+                <h3>Tira led rgb</h3>
+                <p class="price">AGOTADO</p>
+                <button class="btn-add-cart" disabled>Sin Stock</button>
+
+        
+
+
+                
+             </div>   
+
+  
+
+            </div>
+    </section>
+
+    <!-- Modal Detalle del Producto -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <img id="modal-img" src="" alt="Producto">
+                <div class="modal-info">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-price" class="price"></p>
+                    <p id="modal-description"></p>
+                    <button id="modal-add-btn" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel Lateral del Carrito -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Tu Carrito</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart-msg">El carrito está vacío.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0</span>
+            </div>
+            <button class="btn btn-primary btn-checkout" onclick="openCheckoutForm()">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <!-- Modal de Formulario de Envío por Email -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeCheckoutModal()">&times;</span>
+            <h2>Finalizar Pedido</h2>
+            <p>Ingresa tus datos para enviarte el detalle del pedido a tu email y contactarte.</p>
+            
+            <!-- Reemplaza "https://formspree.io/f/xxxxxxxx" por tu Endpoint de Formspree si deseas activarlo por mail directo -->
+            <form id="checkout-form" action="https://formspree.io/f/lucasfmarinero@gmail.com" method="POST" onsubmit="sendOrder(event)">
+                <input type="hidden" name="destino" value="lucasfmarinero@gmail.com">
+                <input type="hidden" name="Detalle_del_Pedido" id="order-details-input">
+                
+                <div class="form-group">
+                    <label for="client-name">Nombre Completo:</label>
+                    <input type="text" id="client-name" name="Nombre_Cliente" required placeholder="Ej: Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label for="client-phone">Teléfono / WhatsApp:</label>
+                    <input type="tel" id="client-phone" name="Telefono_WhatsApp" required placeholder="Ej: 2646166402">
+                </div>
+                <div class="form-group">
+                    <label for="client-email">Tu Email de contacto:</label>
+                    <input type="email" id="client-email" name="Email_Cliente" required placeholder="tuemail@ejemplo.com">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Enviar Pedido por Email</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Overlay de Fondo -->
+    <div id="overlay" class="overlay" onclick="closeAllModals()"></div>
+
+    <!-- Pie de Página -->
+    <footer id="contacto" class="footer">
+        <div class="footer-content">
+            <p class="motivational-quote">"Construye el futuro con las herramientas adecuadas hoy."</p>
+            
+            <div class="social-buttons">
+                <a href="https://wa.me/542646166402" target="_blank" class="social-btn whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp: 2646166402
+                </a>
+                <a href="https://instagram.com/circuito_urbanoo" target="_blank" class="social-btn instagram">
+                    <i class="fa-brands fa-instagram"></i> @circuito_urbanoo
+                </a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Circuito Urbano - Venta de Electrónica y Herramientas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Interactividad Carrito y Modales -->
+    <script>
+        let cart = [];
+
+        function openModal(title, price, img, description) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-price').innerText = price > 0 ? `$${price.toLocaleString()}` : 'AGOTADO';
+            document.getElementById('modal-img').src = img;
+            document.getElementById('modal-description').innerText = description;
+
+            const addBtn = document.getElementById('modal-add-btn');
+            if (price > 0) {
+                addBtn.style.display = 'inline-block';
+                addBtn.onclick = function() {
+                    addToCart(title, price, img);
+                    closeModal();
+                };
+            } else {
+                addBtn.style.display = 'none';
+            }
+
+            document.getElementById('product-modal').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('product-modal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function toggleCart() {
+            const sidebar = document.getElementById('cart-sidebar');
+            const overlay = document.getElementById('overlay');
+            if (sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+                overlay.style.display = 'none';
+            } else {
+                sidebar.classList.add('active');
+                overlay.style.display = 'block';
+            }
+        }
+
+        function addToCart(title, price, img) {
+            const existingItem = cart.find(item => item.title === title);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ title, price, img, quantity: 1 });
+            }
+            updateCartUI();
+        }
+
+        function removeFromCart(title) {
+            cart = cart.filter(item => item.title !== title);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotalPrice = document.getElementById('cart-total-price');
+
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+            let totalItems = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="empty-cart-msg">El carrito está vacío.</p>';
+            } else {
+                cart.forEach(item => {
+                    total += item.price * item.quantity;
+                    totalItems += item.quantity;
+
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'cart-item';
+                    itemDiv.innerHTML = `
+                        <img src="${item.img}" alt="${item.title}">
+                        <div class="cart-item-details">
+                            <h4>${item.title}</h4>
+                            <p>$${item.price.toLocaleString()} x ${item.quantity}</p>
+                        </div>
+                        <i class="fa-solid fa-trash remove-btn" onclick="removeFromCart('${item.title}')"></i>
+                    `;
+                    cartItemsContainer.appendChild(itemDiv);
+                });
+            }
+
+            cartCount.innerText = totalItems;
+            cartTotalPrice.innerText = `$${total.toLocaleString()}`;
+        }
+
+        function openCheckoutForm() {
+            if (cart.length === 0) {
+                alert('El carrito está vacío. Agrega productos antes de finalizar el pedido.');
+                return;
+            }
+            
+            // Construir texto del pedido
+            let orderSummary = "Resumen del Pedido:\n";
+            let total = 0;
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                orderSummary += `- ${item.title} (x${item.quantity}) - $${subtotal.toLocaleString()}\n`;
+            });
+            orderSummary += `\nTOTAL A PAGAR: $${total.toLocaleString()}`;
+
+            document.getElementById('order-details-input').value = orderSummary;
+
+            document.getElementById('checkout-modal').style.display = 'block';
+            document.getElementById('cart-sidebar').classList.remove('active');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkout-modal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function closeAllModals() {
+            closeModal();
+            closeCheckoutModal();
+            document.getElementById('cart-sidebar').classList.remove('active');
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function sendOrder(event) {
+            // Nota: Para recibir directamente los emails mediante Formspree, activa tu cuenta gratis en formspree.io vinculada a lucasfmarinero@gmail.com
+            alert('¡Gracias por tu compra! Tu pedido está siendo enviado a lucasfmarinero@gmail.com.');
+        }
+    </script>
+</body>
+</html>

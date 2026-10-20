@@ -27,11 +27,13 @@
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
-        <div class="cart-icon-container" onclick="toggleCart()">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span id="cart-count">0</span>
-        </div>
     </header>
+
+    <!-- Botón Carrito Flotante Fijo -->
+    <div class="cart-icon-container" onclick="toggleCart()" title="Ver Carrito">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-count">0</span>
+    </div>
 
     <!-- Sección Hero -->
     <section id="inicio" class="hero">
@@ -47,7 +49,7 @@
         </div>
     </section>
 
-    <!-- Destacados / Ventajas -->
+    <!-- Ventajas -->
     <section class="features">
         <div class="feature-card">
             <i class="fa-solid fa-bolt feature-icon"></i>
@@ -66,53 +68,59 @@
         </div>
     </section>
 
-    <!-- Productos Destacados -->
+    <!-- Catálogo de Productos -->
     <section id="productos" class="products">
         <h2 class="section-title">Catálogo de Productos</h2>
         <p class="subtitle-text">Toca la imagen de un producto para ver la descripción completa y agregarlo al carrito.</p>
+
+        <!-- Buscador de productos dinámico -->
+        <div class="search-box-container">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="search-input" placeholder="Buscar producto por nombre o código...">
+        </div>
         
         <div class="product-grid">
 
             <!-- Producto 1 -->
             <div class="product-card">
-                <div class="product-badge">Disponible</div>
-                <img src="1.webp" alt="Adaptador OTG a USB Tipo C" class="product-img" onclick="openModal('Adaptador OTG a USB Tipo C', 2500, '1.webp', 'Adaptador compacto OTG a USB Tipo C. Permite conectar pendrives, mouses, teclados y otros periféricos a tu smartphone o tablet con puerto Tipo C.')">
+                <div class="product-badge">P-001</div>
+                <img src="1.webp" alt="Adaptador OTG a USB Tipo C" class="product-img" onclick="openModal('Adaptador OTG a USB Tipo C (P-001)', 2500, '1.webp', 'Adaptador compacto OTG a USB Tipo C. Permite conectar pendrives, mouses, teclados y otros periféricos a tu smartphone o tablet con puerto Tipo C.')">
                 <h3>Adaptador OTG a USB Tipo C</h3>
                 <p class="price">$2.500</p>
-                <button class="btn-add-cart" onclick="addToCart('Adaptador OTG a USB Tipo C', 2500, '1.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <button class="btn-add-cart" onclick="addToCart('Adaptador OTG a USB Tipo C (P-001)', 2500, '1.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>
 
             <!-- Producto 2 -->
             <div class="product-card">
-                <div class="product-badge">Disponible</div>
-                <img src="2.webp" alt="Adaptador Foco" class="product-img" onclick="openModal('Adaptador Foco', 3000, '2.webp', 'Adaptador portalámparas de alta resistencia. Ideal para instalaciones rápidas y adaptaciones de iluminación doméstica e industrial.')">
+                <div class="product-badge">P-002</div>
+                <img src="2.webp" alt="Adaptador Foco" class="product-img" onclick="openModal('Adaptador Foco (P-002)', 3000, '2.webp', 'Adaptador portalámparas de alta resistencia. Ideal para instalaciones rápidas y adaptaciones de iluminación doméstica e industrial.')">
                 <h3>Adaptador Foco</h3>
                 <p class="price">$3.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Adaptador Foco', 3000, '2.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <button class="btn-add-cart" onclick="addToCart('Adaptador Foco (P-002)', 3000, '2.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>
 
             <!-- Producto 3 -->
             <div class="product-card">
-                <div class="product-badge">Disponible</div>
-                <img src="3.webp" alt="Cable SAMSUNG Tipo C a C" class="product-img" onclick="openModal('Cable SAMSUNG Tipo C a C', 5000, '3.webp', 'Cable de carga rápida y transferencia de datos Samsung Tipo C a Tipo C. Soporta carga rápida de alta potencia y máxima velocidad de datos.')">
+                <div class="product-badge">P-003</div>
+                <img src="3.webp" alt="Cable SAMSUNG Tipo C a C" class="product-img" onclick="openModal('Cable SAMSUNG Tipo C a C (P-003)', 5000, '3.webp', 'Cable de carga rápida y transferencia de datos Samsung Tipo C a Tipo C. Soporta carga rápida de alta potencia y máxima velocidad de datos.')">
                 <h3>Cable SAMSUNG Tipo C a C</h3>
                 <p class="price">$5.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Cable SAMSUNG Tipo C a C', 5000, '3.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <button class="btn-add-cart" onclick="addToCart('Cable SAMSUNG Tipo C a C (P-003)', 5000, '3.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>
 
             <!-- Producto 4 -->
             <div class="product-card">
-                <div class="product-badge">Disponible</div>
-                <img src="4.webp" alt="Consola G5" class="product-img" onclick="openModal('Consola Retro G5', 24000, '4.webp', 'Consola portátil de videojuegos G5 con cientos de juegos retro preinstalados. Pantalla a color de alta definición y batería recargable.')">
+                <div class="product-badge">P-004</div>
+                <img src="4.webp" alt="Consola G5" class="product-img" onclick="openModal('Consola Retro G5 (P-004)', 24000, '4.webp', 'Consola portátil de videojuegos G5 con cientos de juegos retro preinstalados. Pantalla a color de alta definición y batería recargable.')">
                 <h3>Consola Retro G5</h3>
                 <p class="price">$24.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Consola Retro G5', 24000, '4.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <button class="btn-add-cart" onclick="addToCart('Consola Retro G5 (P-004)', 24000, '4.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>
 
             <!-- Producto 5 -->
             <div class="product-card out-of-stock">
-                <div class="product-badge sold-out">Agotado</div>
-                <img src="5.webp" alt="Power Bank 25000 mAh" class="product-img" onclick="openModal('Power Bank 25000 mAh', 0, '5.webp', 'Batería externa portátil Power Bank de 25.000 mAh. Múltiples salidas USB y carga ultra rápida. Actualmente fuera de stock.')">
+                <div class="product-badge sold-out">P-005 - AGOTADO</div>
+                <img src="5.webp" alt="Power Bank 25000 mAh" class="product-img" onclick="openModal('Power Bank 25000 mAh (P-005)', 0, '5.webp', 'Batería externa portátil Power Bank de 25.000 mAh. Múltiples salidas USB y carga ultra rápida. Actualmente fuera de stock.')">
                 <h3>Power Bank 25000 mAh</h3>
                 <p class="price">AGOTADO</p>
                 <button class="btn-add-cart" disabled>Sin Stock</button>
@@ -120,80 +128,80 @@
 
             <!-- Producto 6 -->
             <div class="product-card">
-                <div class="product-badge">Disponible</div>
-                <img src="6.webp" alt="Mouse GAMER" class="product-img" onclick="openModal('Mouse GAMER RGB', 10000, '6.webp', 'Mouse gamer ergonómico con iluminación LED RGB, botones programables y sensor óptico de alta precisión con DPI ajustable.')">
+                <div class="product-badge">P-006</div>
+                <img src="6.webp" alt="Mouse GAMER" class="product-img" onclick="openModal('Mouse GAMER RGB (P-006)', 10000, '6.webp', 'Mouse gamer ergonómico con iluminación LED RGB, botones programables y sensor óptico de alta precisión con DPI ajustable.')">
                 <h3>Mouse GAMER RGB</h3>
                 <p class="price">$10.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Mouse GAMER RGB', 10000, '6.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <button class="btn-add-cart" onclick="addToCart('Mouse GAMER RGB (P-006)', 10000, '6.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>
 
             <!-- Producto 7 -->
             <div class="product-card">
-                <div class="product-badge">Disponible</div>
-                <img src="7.webp" alt="Cable MOTOROLA USB a Tipo C" class="product-img" onclick="openModal('Cable MOTOROLA USB a Tipo C', 4000, '7.webp', 'Cable de carga y datos original Motorola USB a Tipo C. Material reforzado para máxima durabilidad.')">
+                <div class="product-badge">P-007</div>
+                <img src="7.webp" alt="Cable MOTOROLA USB a Tipo C" class="product-img" onclick="openModal('Cable MOTOROLA USB a Tipo C (P-007)', 4000, '7.webp', 'Cable de carga y datos original Motorola USB a Tipo C. Material reforzado para máxima durabilidad.')">
                 <h3>Cable MOTOROLA USB a Tipo C</h3>
                 <p class="price">$4.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Cable MOTOROLA USB a Tipo C', 4000, '7.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <button class="btn-add-cart" onclick="addToCart('Cable MOTOROLA USB a Tipo C (P-007)', 4000, '7.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>
 
             <!-- Producto 8 -->
             <div class="product-card">
-                <div class="product-badge">Disponible</div>
-                <img src="8.webp" alt="Cable MOTOROLA Tipo C a C" class="product-img" onclick="openModal('Cable MOTOROLA Tipo C a C', 5000, '8.webp', 'Cable TurboPower Motorola Tipo C a C. Diseñado para carga rápida eficiente sin sobrecalentamiento.')">
+                <div class="product-badge">P-008</div>
+                <img src="8.webp" alt="Cable MOTOROLA Tipo C a C" class="product-img" onclick="openModal('Cable MOTOROLA Tipo C a C (P-008)', 5000, '8.webp', 'Cable TurboPower Motorola Tipo C a C. Diseñado para carga rápida eficiente sin sobrecalentamiento.')">
                 <h3>Cable MOTOROLA Tipo C a C</h3>
                 <p class="price">$5.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Cable MOTOROLA Tipo C a C', 5000, '8.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <button class="btn-add-cart" onclick="addToCart('Cable MOTOROLA Tipo C a C (P-008)', 5000, '8.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>
 
             <!-- Producto 9 -->
             <div class="product-card">
-                <div class="product-badge">Disponible</div>
-                <img src="9.webp" alt="Cable SAMSUNG USB a Tipo C" class="product-img" onclick="openModal('Cable SAMSUNG USB a Tipo C', 4000, '9.webp', 'Cable de carga rápida Samsung USB a Tipo C. Compatible con una amplia variedad de dispositivos móviles.')">
+                <div class="product-badge">P-009</div>
+                <img src="9.webp" alt="Cable SAMSUNG USB a Tipo C" class="product-img" onclick="openModal('Cable SAMSUNG USB a Tipo C (P-009)', 4000, '9.webp', 'Cable de carga rápida Samsung USB a Tipo C. Compatible con una amplia variedad de dispositivos móviles.')">
                 <h3>Cable SAMSUNG USB a Tipo C</h3>
                 <p class="price">$4.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Cable SAMSUNG USB a Tipo C', 4000, '9.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <button class="btn-add-cart" onclick="addToCart('Cable SAMSUNG USB a Tipo C (P-009)', 4000, '9.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>
 
             <!-- Producto 10 -->
             <div class="product-card">
-                <div class="product-badge">Disponible</div>
-                <img src="10.webp" alt="Cabezal Samsung 45W Tipo C" class="product-img" onclick="openModal('Cabezal SAMSUNG 45W tipo C', 10000, '10.webp', 'Cabezal cargador SAMSUNG 45W TURBO tipo C.')">
+                <div class="product-badge">P-010</div>
+                <img src="10.webp" alt="Cabezal Samsung 45W Tipo C" class="product-img" onclick="openModal('Cabezal SAMSUNG 45W tipo C (P-010)', 10000, '10.webp', 'Cabezal cargador SAMSUNG 45W TURBO tipo C.')">
                 <h3>Cabezal SAMSUNG 45W tipo C</h3>
                 <p class="price">$10.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Cabezal SAMSUNG 45W tipo C', 10000, '10.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <button class="btn-add-cart" onclick="addToCart('Cabezal SAMSUNG 45W tipo C (P-010)', 10000, '10.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>
         
             <!-- Producto 11 -->
             <div class="product-card">
-                <div class="product-badge">Disponible</div>
-                <img src="11.webp" alt="Soporte Celular" class="product-img" onclick="openModal('Soporte Celular', 3500, '11.webp', 'Soporte celular de alta sujeción para auto.')">
+                <div class="product-badge">P-011</div>
+                <img src="11.webp" alt="Soporte Celular" class="product-img" onclick="openModal('Soporte Celular (P-011)', 3500, '11.webp', 'Soporte celular de alta sujeción para auto.')">
                 <h3>Soporte Celular</h3>
                 <p class="price">$3.500</p>
-                <button class="btn-add-cart" onclick="addToCart('Soporte Celular', 3500, '11.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <button class="btn-add-cart" onclick="addToCart('Soporte Celular (P-011)', 3500, '11.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>
 
             <!-- Producto 12 -->
             <div class="product-card">
-                <div class="product-badge">Disponible</div>
-                <img src="12.webp" alt="Power Bank 6000mAh" class="product-img" onclick="openModal('Power Bank 6000mAh', 15000, '12.webp', 'Batería portátil Power Bank 6000mAh de carga rápida.')">
+                <div class="product-badge">P-012</div>
+                <img src="12.webp" alt="Power Bank 6000mAh" class="product-img" onclick="openModal('Power Bank 6000mAh (P-012)', 15000, '12.webp', 'Batería portátil Power Bank 6000mAh de carga rápida.')">
                 <h3>Power Bank 6000mAh</h3>
                 <p class="price">$15.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Power Bank 6000mAh', 15000, '12.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <button class="btn-add-cart" onclick="addToCart('Power Bank 6000mAh (P-012)', 15000, '12.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>   
 
             <!-- Producto 13 -->
             <div class="product-card">
-                <div class="product-badge">Disponible</div>
-                <img src="13.webp" alt="Cargador Auto" class="product-img" onclick="openModal('Cargador Auto', 7500, '13.webp', 'Cargador de auto rápido y compacto.')">
+                <div class="product-badge">P-013</div>
+                <img src="13.webp" alt="Cargador Auto" class="product-img" onclick="openModal('Cargador Auto (P-013)', 7500, '13.webp', 'Cargador de auto rápido y compacto.')">
                 <h3>Cargador Auto</h3>
                 <p class="price">$7.500</p>
-                <button class="btn-add-cart" onclick="addToCart('Cargador Auto', 7500, '13.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <button class="btn-add-cart" onclick="addToCart('Cargador Auto (P-013)', 7500, '13.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>   
 
             <!-- Producto 14 -->
             <div class="product-card out-of-stock">
-                <div class="product-badge sold-out">AGOTADO</div>
-                <img src="14.webp" alt="Tira led rgb" class="product-img" onclick="openModal('Tira led rgb', 0, '14.webp', 'Tira de luces LED RGB multicolor con control remoto.')">
+                <div class="product-badge sold-out">P-014 - AGOTADO</div>
+                <img src="14.webp" alt="Tira led rgb" class="product-img" onclick="openModal('Tira led rgb (P-014)', 0, '14.webp', 'Tira de luces LED RGB multicolor con control remoto.')">
                 <h3>Tira led rgb</h3>
                 <p class="price">AGOTADO</p>
                 <button class="btn-add-cart" disabled>Sin Stock</button>
@@ -201,8 +209,8 @@
 
             <!-- Producto 15 -->
             <div class="product-card out-of-stock">
-                <div class="product-badge sold-out">AGOTADO</div>
-                <img src="15.webp" alt="Depiladora inalambrica" class="product-img" onclick="openModal('Depiladora inalámbrica', 0, '15.webp', 'Depiladora recargable inalámbrica.')">
+                <div class="product-badge sold-out">P-015 - AGOTADO</div>
+                <img src="15.webp" alt="Depiladora inalambrica" class="product-img" onclick="openModal('Depiladora inalámbrica (P-015)', 0, '15.webp', 'Depiladora recargable inalámbrica.')">
                 <h3>Depiladora inalámbrica</h3>
                 <p class="price">AGOTADO</p>
                 <button class="btn-add-cart" disabled>Sin Stock</button>
@@ -210,21 +218,95 @@
 
             <!-- Producto 16 -->
             <div class="product-card">
-                <div class="product-badge">Disponible</div>
-                <img src="16.webp" alt="Auriculares Ultra pods" class="product-img" onclick="openModal('Auriculares Ultra pods', 10000, '16.webp', 'Auriculares bluetooth inalámbricos Ultra pods.')">
+                <div class="product-badge">P-016</div>
+                <img src="16.webp" alt="Auriculares Ultra pods" class="product-img" onclick="openModal('Auriculares Ultra pods (P-016)', 10000, '16.webp', 'Auriculares bluetooth inalámbricos Ultra pods.')">
                 <h3>Auriculares Ultra pods</h3>
                 <p class="price">$10.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Auriculares Ultra pods', 10000, '16.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <button class="btn-add-cart" onclick="addToCart('Auriculares Ultra pods (P-016)', 10000, '16.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>   
 
             <!-- Producto 17 -->
             <div class="product-card">
-                <div class="product-badge">Disponible</div>
-                <img src="17.webp" alt="Sartén Krea" class="product-img" onclick="openModal('Sartén Krea', 18000, '17.webp', 'Sartén antideslizante Krea de alta calidad.')">
+                <div class="product-badge">P-017</div>
+                <img src="17.webp" alt="Sartén Krea" class="product-img" onclick="openModal('Sartén Krea (P-017)', 18000, '17.webp', 'Sartén antideslizante Krea de alta calidad.')">
                 <h3>Sartén Krea</h3>
                 <p class="price">$18.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Sartén Krea', 18000, '17.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
-            </div>   
+                <button class="btn-add-cart" onclick="addToCart('Sartén Krea (P-017)', 18000, '17.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 18 -->
+            <div class="product-card">
+                <div class="product-badge">P-018</div>
+                <img src="18.webp" alt="Amoladora HAMILTON 850W" class="product-img" onclick="openModal('Amoladora HAMILTON 850W (P-018)', 85000, '18.webp', 'Amoladora HAMILTON 850W de potencia.')">
+                <h3>Amoladora HAMILTON 850W</h3>
+                <p class="price">$85.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Amoladora HAMILTON 850W(P-018)', 85000, '18.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 19 -->
+            <div class="product-card">
+                <div class="product-badge">P-019</div>
+                <img src="19.webp" alt="Zapatilla Estacion de carga Futbol" class="product-img" onclick="openModal('Zapatilla Estacion de carga Futbol(P-019)', 17000, '19.webp', 'Zapatilla Estacion de carga Futbol.')">
+                <h3>Zapatilla Estacion de carga Futbol</h3>
+                <p class="price">$17.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Zapatilla Estacion de carga Futbol(P-019)', 17000, '19.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 20 -->
+            <div class="product-card">
+                <div class="product-badge">P-020</div>
+                <img src="20.webp" alt="HUMIFICADOR" class="product-img" onclick="openModal('HUMIFICADOR(P-020)', 12000, '20.webp', 'HUMIFICADOR 130ml.')">
+                <h3>HUMIFICADOR</h3>
+                <p class="price">$12.000</p>
+                <button class="btn-add-cart" onclick="addToCart('HUMIFICADOR(P-020)', 12000, '20.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 21 -->
+            <div class="product-card">
+                <div class="product-badge">P-021</div>
+                <img src="21.webp" alt="Auriculares M10" class="product-img" onclick="openModal('Auriculares M10 (P-021)', 11000, '21.webp', 'Auriculares M10 TWS.')">
+                <h3>Auriculares M10</h3>
+                <p class="price">$11.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Auriculares M10 (P-021)', 11000, '21.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 22 -->
+            <div class="product-card">
+                <div class="product-badge">P-022</div>
+                <img src="22.webp" alt="Auriculares p47" class="product-img" onclick="openModal('Auriculares p47 (P-022)', 11000, '22.webp', 'Auriculares p47 bluetooth.')">
+                <h3>Auriculares p47</h3>
+                <p class="price">$11.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Auriculares p47 (P-022)', 11000, '22.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 23 -->
+            <div class="product-card">
+                <div class="product-badge">P-023</div>
+                <img src="23.webp" alt="Cuchillo Hachuela" class="product-img" onclick="openModal('Cuchillo Hachuela(P-023)', 15000, '23.webp', 'Cuchillo Hachuela.')">
+                <h3>Cuchillo Hachuela</h3>
+                <p class="price">$15.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Cuchillo Hachuela(P-023)', 15000, '23.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 24 -->
+            <div class="product-card">
+                <div class="product-badge">P-024</div>
+                <img src="24.webp" alt="Kit Manicura" class="product-img" onclick="openModal('Kit Manicura (P-024)', 10000, '24.webp', 'Kit Manicura completo.')">
+                <h3>Kit Manicura</h3>
+                <p class="price">$10.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Kit Manicura (P-024)', 10000, '24.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 25 -->
+            <div class="product-card">
+                <div class="product-badge">P-025</div>
+                <img src="25.webp" alt="Linterna Minera" class="product-img" onclick="openModal('Linterna Minera (P-025)', 10000, '25.webp', 'Linterna Minera con sensor.')">
+                <h3>Linterna Minera</h3>
+                <p class="price">$10.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Linterna Minera (P-025)', 10000, '25.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            
 
         </div>
     </section>
@@ -263,7 +345,7 @@
         </div>
     </div>
 
-    <!-- Modal de Formulario de Envío por WhatsApp -->
+    <!-- Modal Formulario de WhatsApp -->
     <div id="checkout-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeCheckoutModal()">&times;</span>
@@ -286,7 +368,7 @@
         </div>
     </div>
 
-    <!-- Overlay de Fondo -->
+    <!-- Overlay -->
     <div id="overlay" class="overlay" onclick="closeAllModals()"></div>
 
     <!-- Pie de Página -->
@@ -309,147 +391,7 @@
         </div>
     </footer>
 
-    <!-- Script Interactividad Carrito y Modales -->
-    <script>
-        let cart = [];
-        const whatsappNumber = "542646166402";
-
-        function openModal(title, price, img, description) {
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-price').innerText = price > 0 ? `$${price.toLocaleString()}` : 'AGOTADO';
-            document.getElementById('modal-img').src = img;
-            document.getElementById('modal-description').innerText = description;
-
-            const addBtn = document.getElementById('modal-add-btn');
-            if (price > 0) {
-                addBtn.style.display = 'inline-block';
-                addBtn.onclick = function() {
-                    addToCart(title, price, img);
-                    closeModal();
-                };
-            } else {
-                addBtn.style.display = 'none';
-            }
-
-            document.getElementById('product-modal').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('product-modal').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        }
-
-        function toggleCart() {
-            const sidebar = document.getElementById('cart-sidebar');
-            const overlay = document.getElementById('overlay');
-            if (sidebar.classList.contains('active')) {
-                sidebar.classList.remove('active');
-                overlay.style.display = 'none';
-            } else {
-                sidebar.classList.add('active');
-                overlay.style.display = 'block';
-            }
-        }
-
-        function addToCart(title, price, img) {
-            const existingItem = cart.find(item => item.title === title);
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({ title, price, img, quantity: 1 });
-            }
-            updateCartUI();
-        }
-
-        function removeFromCart(title) {
-            cart = cart.filter(item => item.title !== title);
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            const cartCount = document.getElementById('cart-count');
-            const cartTotalPrice = document.getElementById('cart-total-price');
-
-            cartItemsContainer.innerHTML = '';
-            let total = 0;
-            let totalItems = 0;
-
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p class="empty-cart-msg">El carrito está vacío.</p>';
-            } else {
-                cart.forEach(item => {
-                    total += item.price * item.quantity;
-                    totalItems += item.quantity;
-
-                    const itemDiv = document.createElement('div');
-                    itemDiv.className = 'cart-item';
-                    itemDiv.innerHTML = `
-                        <img src="${item.img}" alt="${item.title}">
-                        <div class="cart-item-details">
-                            <h4>${item.title}</h4>
-                            <p>$${item.price.toLocaleString()} x ${item.quantity}</p>
-                        </div>
-                        <i class="fa-solid fa-trash remove-btn" onclick="removeFromCart('${item.title}')"></i>
-                    `;
-                    cartItemsContainer.appendChild(itemDiv);
-                });
-            }
-
-            cartCount.innerText = totalItems;
-            cartTotalPrice.innerText = `$${total.toLocaleString()}`;
-        }
-
-        function openCheckoutForm() {
-            if (cart.length === 0) {
-                alert('El carrito está vacío. Agrega productos antes de finalizar el pedido.');
-                return;
-            }
-            document.getElementById('checkout-modal').style.display = 'block';
-            document.getElementById('cart-sidebar').classList.remove('active');
-        }
-
-        function closeCheckoutModal() {
-            document.getElementById('checkout-modal').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        }
-
-        function closeAllModals() {
-            closeModal();
-            closeCheckoutModal();
-            document.getElementById('cart-sidebar').classList.remove('active');
-            document.getElementById('overlay').style.display = 'none';
-        }
-
-        function sendWhatsAppOrder(event) {
-            event.preventDefault();
-            
-            const clientName = document.getElementById('client-name').value.trim();
-            const clientNotes = document.getElementById('client-notes').value.trim();
-
-            let message = `*¡Hola Circuito Urbano! Quiero realizar el siguiente pedido:*\n\n`;
-            message += `👤 *Cliente:* ${clientName}\n`;
-            if (clientNotes) {
-                message += `📝 *Notas / Dirección:* ${clientNotes}\n`;
-            }
-            message += `\n📦 *Productos:*\n`;
-
-            let total = 0;
-            cart.forEach(item => {
-                const subtotal = item.price * item.quantity;
-                total += subtotal;
-                message += `• ${item.title} (x${item.quantity}) - $${subtotal.toLocaleString()}\n`;
-            });
-
-            message += `\n💰 *TOTAL A PAGAR:* $${total.toLocaleString()}`;
-
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-            window.open(whatsappUrl, '_blank');
-            closeCheckoutModal();
-        }
-    </script>
+    <!-- Script Principal -->
+    <script src="script.js"></script>
 </body>
 </html>

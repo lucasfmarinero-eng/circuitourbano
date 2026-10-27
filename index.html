@@ -14,71 +14,182 @@
 </head>
 <body>
 
-    <!-- Navegación -->
-    <header class="navbar">
-        <div class="logo">
-            <i class="fa-solid fa-microchip"></i>
-            <span>Circuito<span class="highlight">Urbano</span></span>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Navegación -->
+<header class="navbar">
+    <div class="logo">
+        <i class="fa-solid fa-microchip"></i>
+        <span>Circuito<span class="highlight">Urbano</span></span>
+    </div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#bazar">Bazar</a></li>
+            <li><a href="#herramientas">Herramientas</a></li>
+            <li><a href="#electronica">Electrónica</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Botón Carrito Flotante Fijo -->
-    <div class="cart-icon-container" onclick="toggleCart()" title="Ver Carrito">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span id="cart-count">0</span>
+<!-- Botón Carrito Flotante Fijo -->
+<div class="cart-icon-container" onclick="toggleCart()" title="Ver Carrito">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="cart-count">0</span>
+</div>
+
+<!-- Sección Hero -->
+<section id="inicio" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <span class="badge">Tecnología & Trabajo Pesado</span>
+        <h1>Potencia e Innovación en Cada Proyecto</h1>
+        <p>La mejor selección de componentes electrónicos, artículos de bazar y herramientas para tus proyectos y el hogar.</p>
+        <div class="hero-buttons">
+            <a href="#productos" class="btn btn-primary">Ver Catálogo</a>
+            <a href="#contacto" class="btn btn-secondary">Contactar</a>
+        </div>
+    </div>
+</section>
+
+<!-- Ventajas -->
+<section class="features">
+    <div class="feature-card">
+        <i class="fa-solid fa-bolt feature-icon"></i>
+        <h3>Alta Eficiencia</h3>
+        <p>Componentes probados bajo los estándares más exigentes del mercado.</p>
+    </div>
+    <div class="feature-card">
+        <i class="fa-solid fa-screwdriver-wrench feature-icon"></i>
+        <h3>Herramientas Profesionales</h3>
+        <p>Equipamiento resistente diseñado para durar y facilitar tu trabajo.</p>
+    </div>
+    <div class="feature-card">
+        <i class="fa-solid fa-truck-fast feature-icon"></i>
+        <h3>Envíos Rápidos</h3>
+        <p>Recibe tus productos donde los necesites de forma rápida y segura.</p>
+    </div>
+</section>
+
+<!-- Catálogo de Productos -->
+<section id="productos" class="products">
+    <h2 class="section-title">Catálogo de Productos</h2>
+    <p class="subtitle-text">Toca la imagen de un producto para ver la descripción completa y agregarlo al carrito.</p>
+
+    <!-- Buscador de productos dinámico -->
+    <div class="search-box-container">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="search-input" placeholder="Buscar producto por nombre o código...">
     </div>
 
-    <!-- Sección Hero -->
-    <section id="inicio" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <span class="badge">Tecnología & Trabajo Pesado</span>
-            <h1>Potencia e Innovación en Cada Proyecto</h1>
-            <p>La mejor selección de componentes electrónicos y accesorios de alta precisión para profesionales y entusiastas.</p>
-            <div class="hero-buttons">
-                <a href="#productos" class="btn btn-primary">Ver Catálogo</a>
-                <a href="#contacto" class="btn btn-secondary">Contactar</a>
+    <!-- CATEGORÍA 1: BAZAR -->
+    <div id="bazar" class="category-section">
+        <h2 class="category-title"><i class="fa-solid fa-house"></i> Bazar</h2>
+        <div class="product-grid">
+
+            <!-- Producto 15 (AGOTADO) -->
+            <div class="product-card out-of-stock">
+                <div class="product-badge sold-out">P-015 - AGOTADO</div>
+                <img src="15.webp" alt="Depiladora inalambrica" class="product-img" onclick="openModal('Depiladora inalámbrica (P-015)', 0, '15.webp', 'Depiladora recargable inalámbrica.')">
+                <h3>Depiladora inalámbrica</h3>
+                <p class="price">AGOTADO</p>
+                <button class="btn-add-cart" disabled>Sin Stock</button>
             </div>
-        </div>
-    </section>
 
-    <!-- Ventajas -->
-    <section class="features">
-        <div class="feature-card">
-            <i class="fa-solid fa-bolt feature-icon"></i>
-            <h3>Alta Eficiencia</h3>
-            <p>Componentes probados bajo los estándares más exigentes del mercado.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fa-solid fa-screwdriver-wrench feature-icon"></i>
-            <h3>Herramientas Profesionales</h3>
-            <p>Equipamiento resistente diseñado para durar y facilitar tu trabajo.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fa-solid fa-truck-fast feature-icon"></i>
-            <h3>Envíos Rápidos</h3>
-            <p>Recibe tus productos donde los necesites de forma rápida y segura.</p>
-        </div>
-    </section>
+            <!-- Producto 17 -->
+            <div class="product-card">
+                <div class="product-badge">P-017</div>
+                <img src="17.webp" alt="Sartén Krea" class="product-img" onclick="openModal('Sartén Krea (P-017)', 18000, '17.webp', 'Sartén antiadherente Krea de alta calidad.')">
+                <h3>Sartén Krea</h3>
+                <p class="price">$18.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Sartén Krea (P-017)', 18000, '17.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
 
-    <!-- Catálogo de Productos -->
-    <section id="productos" class="products">
-        <h2 class="section-title">Catálogo de Productos</h2>
-        <p class="subtitle-text">Toca la imagen de un producto para ver la descripción completa y agregarlo al carrito.</p>
+            <!-- Producto 20 (AGOTADO) -->
+            <div class="product-card out-of-stock">
+                <div class="product-badge sold-out">P-020 - AGOTADO</div>
+                <img src="20.webp" alt="HUMIFICADOR" class="product-img" onclick="openModal('HUMIFICADOR (P-020)', 0, '20.webp', 'Humidificador 130ml. Actualmente fuera de stock.')">
+                <h3>HUMIFICADOR</h3>
+                <p class="price">AGOTADO</p>
+                <button class="btn-add-cart" disabled>Sin Stock</button>
+            </div>
 
-        <!-- Buscador de productos dinámico -->
-        <div class="search-box-container">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <input type="text" id="search-input" placeholder="Buscar producto por nombre o código...">
+            <!-- Producto 23 -->
+            <div class="product-card">
+                <div class="product-badge">P-023</div>
+                <img src="23.webp" alt="Cuchillo Hachuela" class="product-img" onclick="openModal('Cuchillo Hachuela (P-023)', 15000, '23.webp', 'Cuchillo Hachuela de cocina de alta resistencia.')">
+                <h3>Cuchillo Hachuela</h3>
+                <p class="price">$15.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Cuchillo Hachuela (P-023)', 15000, '23.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 24 (AGOTADO) -->
+            <div class="product-card out-of-stock">
+                <div class="product-badge sold-out">P-024 - AGOTADO</div>
+                <img src="24.webp" alt="Kit Manicura" class="product-img" onclick="openModal('Kit Manicura (P-024)', 0, '24.webp', 'Kit Manicura completo. Actualmente fuera de stock.')">
+                <h3>Kit Manicura</h3>
+                <p class="price">AGOTADO</p>
+                <button class="btn-add-cart" disabled>Sin Stock</button>
+            </div>
+
         </div>
-        
+    </div>
+
+    <!-- CATEGORÍA 2: HERRAMIENTAS -->
+    <div id="herramientas" class="category-section">
+        <h2 class="category-title"><i class="fa-solid fa-screwdriver-wrench"></i> Herramientas</h2>
+        <div class="product-grid">
+
+            <!-- Producto 18 -->
+            <div class="product-card">
+                <div class="product-badge">P-018</div>
+                <img src="18.webp" alt="Amoladora HAMILTON 850W" class="product-img" onclick="openModal('Amoladora HAMILTON 850W (P-018)', 85000, '18.webp', 'Amoladora HAMILTON 850W de potencia.')">
+                <h3>Amoladora HAMILTON 850W</h3>
+                <p class="price">$85.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Amoladora HAMILTON 850W (P-018)', 85000, '18.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 25 -->
+            <div class="product-card">
+                <div class="product-badge">P-025</div>
+                <img src="25.webp" alt="Linterna Minera" class="product-img" onclick="openModal('Linterna Minera (P-025)', 10000, '25.webp', 'Linterna Minera con sensor.')">
+                <h3>Linterna Minera</h3>
+                <p class="price">$10.000</p>
+                <button class="btn-add-cart" onclick="addToCart('Linterna Minera (P-025)', 10000, '25.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 26: Pinza Universal 8 pulgadas -->
+            <div class="product-card">
+                <div class="product-badge">P-026</div>
+                <img src="26.webp" alt="Pinza universal 8 pulgadas" class="product-img" onclick="openModal('Pinza universal 8 pulgadas (P-026)', 15000, '26.webp', 'Pinza universal de 8 pulgadas de alta resistencia para trabajos de electricidad y taller.')">
+                <h3>Pinza universal 8"</h3>
+                <p class="price">$15000</p>
+                <button class="btn-add-cart" onclick="addToCart('Pinza universal 8 pulgadas (P-026)', 15000, '26.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 27: Bordeadora Winco 600W -->
+            <div class="product-card">
+                <div class="product-badge">P-027</div>
+                <img src="27.webp" alt="Bordeadora winco 600w" class="product-img" onclick="openModal('Bordeadora Winco 600W (P-027)', 90000, '27.webp', 'Bordeadora eléctrica Winco 600W, ideal para el mantenimiento y corte de césped en jardines.')">
+                <h3>Bordeadora Winco 600W</h3>
+                <p class="price">$90000</p>
+                <button class="btn-add-cart" onclick="addToCart('Bordeadora Winco 600W (P-027)', 90000, '27.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 28: Amoladora Winco 500W -->
+            <div class="product-card">
+                <div class="product-badge">P-028</div>
+                <img src="28.webp" alt="Amoladora winco 500w" class="product-img" onclick="openModal('Amoladora Winco 500W (P-028)', 65000, '28.webp', 'Amoladora angular Winco de 500W, compacta y potente para cortes y desbaste.')">
+                <h3>Amoladora Winco 500W</h3>
+                <p class="price">$65000</p>
+                <button class="btn-add-cart" onclick="addToCart('Amoladora Winco 500W (P-028)', 15000, '28.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CATEGORÍA 3: ELECTRÓNICA -->
+    <div id="electronica" class="category-section">
+        <h2 class="category-title"><i class="fa-solid fa-bolt"></i> Electrónica</h2>
         <div class="product-grid">
 
             <!-- Producto 1 -->
@@ -90,13 +201,13 @@
                 <button class="btn-add-cart" onclick="addToCart('Adaptador OTG a USB Tipo C (P-001)', 2500, '1.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>
 
-            <!-- Producto 2 -->
-            <div class="product-card">
-                <div class="product-badge">P-002</div>
-                <img src="2.webp" alt="Adaptador Foco" class="product-img" onclick="openModal('Adaptador Foco (P-002)', 3000, '2.webp', 'Adaptador portalámparas de alta resistencia. Ideal para instalaciones rápidas y adaptaciones de iluminación doméstica e industrial.')">
+            <!-- Producto 2 (AGOTADO) -->
+            <div class="product-card out-of-stock">
+                <div class="product-badge sold-out">P-002 - AGOTADO</div>
+                <img src="2.webp" alt="Adaptador Foco" class="product-img" onclick="openModal('Adaptador Foco (P-002)', 0, '2.webp', 'Adaptador portalámparas de alta resistencia. Actualmente fuera de stock.')">
                 <h3>Adaptador Foco</h3>
-                <p class="price">$3.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Adaptador Foco (P-002)', 3000, '2.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <p class="price">AGOTADO</p>
+                <button class="btn-add-cart" disabled>Sin Stock</button>
             </div>
 
             <!-- Producto 3 -->
@@ -117,7 +228,7 @@
                 <button class="btn-add-cart" disabled>Sin Stock</button>
             </div>
 
-            <!-- Producto 5 -->
+            <!-- Producto 5 (AGOTADO) -->
             <div class="product-card out-of-stock">
                 <div class="product-badge sold-out">P-005 - AGOTADO</div>
                 <img src="5.webp" alt="Power Bank 25000 mAh" class="product-img" onclick="openModal('Power Bank 25000 mAh (P-005)', 0, '5.webp', 'Batería externa portátil Power Bank de 25.000 mAh. Múltiples salidas USB y carga ultra rápida. Actualmente fuera de stock.')">
@@ -170,7 +281,7 @@
                 <p class="price">$10.000</p>
                 <button class="btn-add-cart" onclick="addToCart('Cabezal SAMSUNG 45W tipo C (P-010)', 10000, '10.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>
-        
+
             <!-- Producto 11 -->
             <div class="product-card">
                 <div class="product-badge">P-011</div>
@@ -189,29 +300,20 @@
                 <button class="btn-add-cart" disabled>Sin Stock</button>
             </div>   
 
-            <!-- Producto 13 -->
-            <div class="product-card">
-                <div class="product-badge">P-013</div>
-                <img src="13.webp" alt="Cargador Auto" class="product-img" onclick="openModal('Cargador Auto (P-013)', 7500, '13.webp', 'Cargador de auto rápido y compacto.')">
-                <h3>Cargador Auto</h3>
-                <p class="price">$7.500</p>
-                <button class="btn-add-cart" onclick="addToCart('Cargador Auto (P-013)', 7500, '13.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
-            </div>   
-
-            <!-- Producto 14 -->
+            <!-- Producto 13 (AGOTADO) -->
             <div class="product-card out-of-stock">
-                <div class="product-badge sold-out">P-014 - AGOTADO</div>
-                <img src="14.webp" alt="Tira led rgb" class="product-img" onclick="openModal('Tira led rgb (P-014)', 0, '14.webp', 'Tira de luces LED RGB multicolor con control remoto.')">
-                <h3>Tira led rgb</h3>
+                <div class="product-badge sold-out">P-013 - AGOTADO</div>
+                <img src="13.webp" alt="Cargador Auto" class="product-img" onclick="openModal('Cargador Auto (P-013)', 0, '13.webp', 'Cargador de auto rápido y compacto. Actualmente fuera de stock.')">
+                <h3>Cargador Auto</h3>
                 <p class="price">AGOTADO</p>
                 <button class="btn-add-cart" disabled>Sin Stock</button>
             </div>   
 
-            <!-- Producto 15 -->
+            <!-- Producto 14 (AGOTADO) -->
             <div class="product-card out-of-stock">
-                <div class="product-badge sold-out">P-015 - AGOTADO</div>
-                <img src="15.webp" alt="Depiladora inalambrica" class="product-img" onclick="openModal('Depiladora inalámbrica (P-015)', 0, '15.webp', 'Depiladora recargable inalámbrica.')">
-                <h3>Depiladora inalámbrica</h3>
+                <div class="product-badge sold-out">P-014 - AGOTADO</div>
+                <img src="14.webp" alt="Tira led rgb" class="product-img" onclick="openModal('Tira led rgb (P-014)', 0, '14.webp', 'Tira de luces LED RGB multicolor con control remoto. Actualmente fuera de stock.')">
+                <h3>Tira led rgb</h3>
                 <p class="price">AGOTADO</p>
                 <button class="btn-add-cart" disabled>Sin Stock</button>
             </div>   
@@ -225,40 +327,13 @@
                 <button class="btn-add-cart" onclick="addToCart('Auriculares Ultra pods (P-016)', 10000, '16.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>   
 
-            <!-- Producto 17 -->
-            <div class="product-card">
-                <div class="product-badge">P-017</div>
-                <img src="17.webp" alt="Sartén Krea" class="product-img" onclick="openModal('Sartén Krea (P-017)', 18000, '17.webp', 'Sartén antideslizante Krea de alta calidad.')">
-                <h3>Sartén Krea</h3>
-                <p class="price">$18.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Sartén Krea (P-017)', 18000, '17.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
-            </div>
-
-            <!-- Producto 18 -->
-            <div class="product-card">
-                <div class="product-badge">P-018</div>
-                <img src="18.webp" alt="Amoladora HAMILTON 850W" class="product-img" onclick="openModal('Amoladora HAMILTON 850W (P-018)', 85000, '18.webp', 'Amoladora HAMILTON 850W de potencia.')">
-                <h3>Amoladora HAMILTON 850W</h3>
-                <p class="price">$85.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Amoladora HAMILTON 850W(P-018)', 85000, '18.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
-            </div>
-
-            <!-- Producto 19 -->
-            <div class="product-card">
-                <div class="product-badge">P-019</div>
-                <img src="19.webp" alt="Zapatilla Estacion de carga Futbol" class="product-img" onclick="openModal('Zapatilla Estacion de carga Futbol(P-019)', 17000, '19.webp', 'Zapatilla Estacion de carga Futbol.')">
+            <!-- Producto 19 (AGOTADO) -->
+            <div class="product-card out-of-stock">
+                <div class="product-badge sold-out">P-019 - AGOTADO</div>
+                <img src="19.webp" alt="Zapatilla Estacion de carga Futbol" class="product-img" onclick="openModal('Zapatilla Estacion de carga Futbol (P-019)', 0, '19.webp', 'Zapatilla Estacion de carga Futbol. Actualmente fuera de stock.')">
                 <h3>Zapatilla Estacion de carga Futbol</h3>
-                <p class="price">$17.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Zapatilla Estacion de carga Futbol(P-019)', 17000, '19.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
-            </div>
-
-            <!-- Producto 20 -->
-            <div class="product-card">
-                <div class="product-badge">P-020</div>
-                <img src="20.webp" alt="HUMIFICADOR" class="product-img" onclick="openModal('HUMIFICADOR(P-020)', 12000, '20.webp', 'HUMIFICADOR 130ml.')">
-                <h3>HUMIFICADOR</h3>
-                <p class="price">$12.000</p>
-                <button class="btn-add-cart" onclick="addToCart('HUMIFICADOR(P-020)', 12000, '20.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
+                <p class="price">AGOTADO</p>
+                <button class="btn-add-cart" disabled>Sin Stock</button>
             </div>
 
             <!-- Producto 21 -->
@@ -279,117 +354,90 @@
                 <button class="btn-add-cart" onclick="addToCart('Auriculares p47 (P-022)', 11000, '22.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>
 
-            <!-- Producto 23 -->
-            <div class="product-card">
-                <div class="product-badge">P-023</div>
-                <img src="23.webp" alt="Cuchillo Hachuela" class="product-img" onclick="openModal('Cuchillo Hachuela(P-023)', 15000, '23.webp', 'Cuchillo Hachuela.')">
-                <h3>Cuchillo Hachuela</h3>
-                <p class="price">$15.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Cuchillo Hachuela(P-023)', 15000, '23.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
-            </div>
-
-            <!-- Producto 24 -->
-            <div class="product-card">
-                <div class="product-badge">P-024</div>
-                <img src="24.webp" alt="Kit Manicura" class="product-img" onclick="openModal('Kit Manicura (P-024)', 10000, '24.webp', 'Kit Manicura completo.')">
-                <h3>Kit Manicura</h3>
-                <p class="price">$10.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Kit Manicura (P-024)', 10000, '24.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
-            </div>
-
-            <!-- Producto 25 -->
-            <div class="product-card">
-                <div class="product-badge">P-025</div>
-                <img src="25.webp" alt="Linterna Minera" class="product-img" onclick="openModal('Linterna Minera (P-025)', 10000, '25.webp', 'Linterna Minera con sensor.')">
-                <h3>Linterna Minera</h3>
-                <p class="price">$10.000</p>
-                <button class="btn-add-cart" onclick="addToCart('Linterna Minera (P-025)', 10000, '25.webp')"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Modal Detalle del Producto -->
-    <div id="product-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div class="modal-body">
-                <img id="modal-img" src="" alt="Producto">
-                <div class="modal-info">
-                    <h2 id="modal-title"></h2>
-                    <p id="modal-price" class="price"></p>
-                    <p id="modal-description"></p>
-                    <button id="modal-add-btn" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
-                </div>
-            </div>
         </div>
     </div>
 
-    <!-- Panel Lateral del Carrito -->
-    <div id="cart-sidebar" class="cart-sidebar">
-        <div class="cart-header">
-            <h3><i class="fa-solid fa-cart-shopping"></i> Tu Carrito</h3>
-            <span class="close-cart" onclick="toggleCart()">&times;</span>
-        </div>
-        <div id="cart-items" class="cart-items">
-            <p class="empty-cart-msg">El carrito está vacío.</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cart-total-price">$0</span>
+</section>
+
+<!-- Modal Detalle del Producto -->
+<div id="product-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div class="modal-body">
+            <img id="modal-img" src="" alt="Producto">
+            <div class="modal-info">
+                <h2 id="modal-title"></h2>
+                <p id="modal-price" class="price"></p>
+                <p id="modal-description"></p>
+                <button id="modal-add-btn" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Agregar al Carrito</button>
             </div>
-            <button class="btn btn-primary btn-checkout" onclick="openCheckoutForm()">Finalizar Pedido</button>
         </div>
     </div>
+</div>
 
-    <!-- Modal Formulario de WhatsApp -->
-    <div id="checkout-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeCheckoutModal()">&times;</span>
-            <h2>Finalizar Pedido</h2>
-            <p>Ingresa tus datos para enviar tu pedido directamente a nuestro WhatsApp.</p>
-            
-            <form id="checkout-form" onsubmit="sendWhatsAppOrder(event)">
-                <div class="form-group">
-                    <label for="client-name">Nombre Completo:</label>
-                    <input type="text" id="client-name" required placeholder="Ej: Juan Pérez">
-                </div>
-                <div class="form-group">
-                    <label for="client-notes">Dirección o notas adicionales (Opcional):</label>
-                    <input type="text" id="client-notes" placeholder="Ej: Envío a domicilio / Retiro por local">
-                </div>
-                <button type="submit" class="btn btn-primary btn-block social-btn whatsapp" style="border:none; width: 100%; justify-content: center; font-size: 1rem;">
-                    <i class="fa-brands fa-whatsapp"></i> Enviar Pedido por WhatsApp
-                </button>
-            </form>
+<!-- Panel Lateral del Carrito -->
+<div id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-header">
+        <h3><i class="fa-solid fa-cart-shopping"></i> Tu Carrito</h3>
+        <span class="close-cart" onclick="toggleCart()">&times;</span>
+    </div>
+    <div id="cart-items" class="cart-items">
+        <p class="empty-cart-msg">El carrito está vacío.</p>
+    </div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total-price">$0</span>
+        </div>
+        <button class="btn btn-primary btn-checkout" onclick="openCheckoutForm()">Finalizar Pedido</button>
+    </div>
+</div>
+
+<!-- Modal Formulario de WhatsApp -->
+<div id="checkout-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeCheckoutModal()">&times;</span>
+        <h2>Finalizar Pedido</h2>
+        <p>Ingresa tus datos para enviar tu pedido directamente a nuestro WhatsApp.</p>
+        
+        <form id="checkout-form" onsubmit="sendWhatsAppOrder(event)">
+            <div class="form-group">
+                <label for="client-name">Nombre Completo:</label>
+                <input type="text" id="client-name" required placeholder="Ej: Juan Pérez">
+            </div>
+            <div class="form-group">
+                <label for="client-notes">Dirección o notas adicionales (Opcional):</label>
+                <input type="text" id="client-notes" placeholder="Ej: Envío a domicilio / Retiro por local">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block social-btn whatsapp" style="border:none; width: 100%; justify-content: center; font-size: 1rem;">
+                <i class="fa-brands fa-whatsapp"></i> Enviar Pedido por WhatsApp
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="closeAllModals()"></div>
+
+<!-- Pie de Página -->
+<footer id="contacto" class="footer">
+    <div class="footer-content">
+        <p class="motivational-quote">"Construye el futuro con las herramientas adecuadas hoy."</p>
+        
+        <div class="social-buttons">
+            <a href="https://wa.me/542646166402" target="_blank" class="social-btn whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp: 2646166402
+            </a>
+            <a href="https://instagram.com/circuito_urbanoo" target="_blank" class="social-btn instagram">
+                <i class="fa-brands fa-instagram"></i> @circuito_urbanoo
+            </a>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Circuito Urbano - Venta de Electrónica y Herramientas. Todos los derechos reservados.</p>
         </div>
     </div>
+</footer>
 
-    <!-- Overlay -->
-    <div id="overlay" class="overlay" onclick="closeAllModals()"></div>
-
-    <!-- Pie de Página -->
-    <footer id="contacto" class="footer">
-        <div class="footer-content">
-            <p class="motivational-quote">"Construye el futuro con las herramientas adecuadas hoy."</p>
-            
-            <div class="social-buttons">
-                <a href="https://wa.me/542646166402" target="_blank" class="social-btn whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> WhatsApp: 2646166402
-                </a>
-                <a href="https://instagram.com/circuito_urbanoo" target="_blank" class="social-btn instagram">
-                    <i class="fa-brands fa-instagram"></i> @circuito_urbanoo
-                </a>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Circuito Urbano - Venta de Electrónica y Herramientas. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Script Principal -->
-    <script src="script.js"></script>
-</body>
-</html>
+<!-- Script Principal -->
+<script src="script.js"></script>
